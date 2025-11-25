@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+    <title>Highlight Item</title>
+    <id>Elin.HighlightItem</id>
+    <author>Quicee</author>
+    <loadPriority>100</loadPriority>
+    <version>0.23.237</version>
+    <tags>General,QoL,Item</tags>
+    <description>this is sample mod</description>
+    <builtin>false</builtin>
+    <visibility>Private</visibility>
+</Meta>
