@@ -27,7 +27,7 @@ namespace HighlightItem
         private const string CsvFileName = "UserFilter.csv";
 
         public static List<Filter> UserFilterList = [];
-        
+
         private void Awake()
         {
             Instance = this;
@@ -49,7 +49,7 @@ namespace HighlightItem
         {
             Instance?.Logger.LogError(message);
         }
-        
+
         private static void LoadCsv()
         {
             try
@@ -61,6 +61,7 @@ namespace HighlightItem
                     using var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture);
                     UserFilterList = csvReader.GetRecords<Filter>().ToList();
                 }
+
                 Debug.Log($"[{ModInfo.Name}] Success load CSV File");
             }
             catch (Exception ex)

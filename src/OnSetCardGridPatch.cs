@@ -1,6 +1,5 @@
 using HarmonyLib;
 using HighlightItem;
-using UnityEngine;
 
 [HarmonyPatch(typeof(Trait), nameof(Trait.OnSetCardGrid))]
 internal class OnSetCardGridPatch
@@ -27,7 +26,8 @@ internal class OnSetCardGridPatch
             foreach (var element in card.elements.dict.Values)
             {
                 // element.Name returns the localized display name (e.g., "Fire Damage" or "火炎ダメージ")
-                if (!string.IsNullOrEmpty(element.Name) && element.Name.Contains(userFilter.EnchantName!) && element.Value >= (userFilter.Value ?? 0))
+                if (!string.IsNullOrEmpty(element.Name) && element.Name.Contains(userFilter.EnchantName!) &&
+                    element.Value >= (userFilter.Value ?? 0))
                 {
                     __0.Attach("guide", false);
                     return; // Found a match, highlight and exit
