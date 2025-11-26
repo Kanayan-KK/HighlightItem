@@ -1,8 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using BepInEx;
+using CsvHelper;
 using HarmonyLib;
+using UnityEngine;
 
-namespace HighlightItem.src
+namespace HighlightItem
 {
     public static class ModInfo
     {
@@ -16,12 +24,15 @@ namespace HighlightItem.src
     {
         internal static Plugin? Instance;
 
+        private const string CsvFileName = "UserFilter.csv";
+
+        public static List<Filter> UserFilterList = [];
+        
         private void Awake()
         {
             Instance = this;
-            var h = new Harmony(ModInfo.Name);
-            h.PatchAll();
-            // Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), ModInfo.Guid);
+            LoadCsv();
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), ModInfo.Guid);
         }
 
         internal static void LogDebug(object message, [CallerMemberName] string caller = "")
@@ -37,6 +48,26 @@ namespace HighlightItem.src
         internal static void LogError(object message)
         {
             Instance?.Logger.LogError(message);
+        }
+        
+        private static void LoadCsv()
+        {
+            try
+            {
+                var csvFilePath =
+                    Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, CsvFileName);
+                using (var reader = new StreamReader(csvFilePath))
+                {
+                    using var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture);
+                    UserFilterList = csvReader.GetRecords<Filter>().ToList();
+                }
+                Debug.Log($"[{ModInfo.Name}] Success load CSV File");
+            }
+            catch (Exception ex)
+            {
+                EClass.ui.Say($"[{ModInfo.Name}] Failed load CSV File");
+                Debug.Log(ex.Message);
+            }
         }
     }
 }

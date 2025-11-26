@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace HighlightItem.src
+namespace HighlightItem
 {
     [HarmonyPatch(typeof(Zone))]
     [HarmonyPatch(nameof(Zone.Activate))]

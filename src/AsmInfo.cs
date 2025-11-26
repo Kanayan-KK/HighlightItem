@@ -1,5 +1,5 @@
 using System.Reflection;
-using HighlightItem.src;
+using HighlightItem;
 
 [assembly: AssemblyVersion($"{ModInfo.Version}.*")]
 [assembly: AssemblyFileVersion(ModInfo.Version)]
