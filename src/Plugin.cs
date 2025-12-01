@@ -16,7 +16,7 @@ namespace HighlightItem
     {
         public const string Guid = "Elin.HighlightItem";
         public const string Name = "Highlight Item";
-        public const string Version = "1.0.1";
+        public const string Version = "1.0.2";
     }
 
     [BepInPlugin(ModInfo.Guid, ModInfo.Name, ModInfo.Version)]
@@ -27,7 +27,7 @@ namespace HighlightItem
         private const string CsvFileName = "UserFilter.csv";
 
         internal static List<Filter> UserFilterList = [];
-        
+
         private void Awake()
         {
             Instance = this;
@@ -49,7 +49,7 @@ namespace HighlightItem
         {
             Instance?.Logger.LogError(message);
         }
-        
+
         // CSVファイルを読み込む    
         internal static void LoadCsv()
         {
@@ -58,13 +58,13 @@ namespace HighlightItem
                 // ファイルパス作成
                 var csvFilePath =
                     Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, CsvFileName);
-                
+
                 using (var reader = new StreamReader(csvFilePath))
                 {
                     using var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture);
                     UserFilterList = csvReader.GetRecords<Filter>().ToList();
                 }
-                
+
                 // 成功メッセージ
                 EClass.ui.Say($"[{ModInfo.Name}] Success load CSV File");
             }
@@ -75,7 +75,7 @@ namespace HighlightItem
                 Debug.Log(ex.Message);
             }
         }
-        
+
         // エンチャントがCSV条件に合うかを返す
         internal static bool CheckIsMatch(Element element, Filter filter)
         {

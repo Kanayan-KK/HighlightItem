@@ -29,7 +29,7 @@ namespace HighlightItem
                 {
                     if (Plugin.CheckIsMatch(element, userFilter))
                         // アイテム外枠をハイライト
-                        __0.Attach("guide", false);
+                        __0.Attach("searched", false);
                 }
             }
         }
