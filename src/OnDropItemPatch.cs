@@ -26,7 +26,7 @@ namespace HighlightItem
 
                 foreach (var element in thing.elements.dict.Values)
                 {
-                    if (Plugin.CheckIsMatch(element, userFilter))
+                    if (Plugin.CheckIsMatch(element, userFilter, t))
                     {
                         // サウンド再生
                         SE.Play("jingle_lvup");

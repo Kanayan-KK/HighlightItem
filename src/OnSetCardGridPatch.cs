@@ -27,7 +27,7 @@ namespace HighlightItem
 
                 foreach (var element in card.elements.dict.Values)
                 {
-                    if (Plugin.CheckIsMatch(element, userFilter))
+                    if (Plugin.CheckIsMatch(element, userFilter, card))
                         // アイテム外枠をハイライト
                         __0.Attach("searched", false);
                 }
