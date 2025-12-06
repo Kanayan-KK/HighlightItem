@@ -15,7 +15,7 @@ namespace HighlightItem
     public static class ModInfo
     {
         public const string Guid = "Elin.HighlightItem";
-        public const string Name = "Highlight Item";
+        public const string Name = "Highlight Item Enchant";
         public const string Version = "1.0.4";
     }
 

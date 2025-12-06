@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Meta>
-    <title>Highlight Item</title>
+    <title>Highlight Item Enchant</title>
     <id>Elin.HighlightItem</id>
     <author>Quicee</author>
     <loadPriority>100</loadPriority>
