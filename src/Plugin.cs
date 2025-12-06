@@ -16,7 +16,7 @@ namespace HighlightItem
     {
         public const string Guid = "Elin.HighlightItem";
         public const string Name = "Highlight Item";
-        public const string Version = "1.0.3";
+        public const string Version = "1.0.4";
     }
 
     [BepInPlugin(ModInfo.Guid, ModInfo.Name, ModInfo.Version)]
@@ -83,14 +83,10 @@ namespace HighlightItem
             if (string.IsNullOrEmpty(element.Name))
                 return false;
 
-            // 食べ物用エンチャントを除外する
-            if (element.IsFoodTrait)
-                return false;
-
             // 有効でないファクション効果を除外する
             if (!element.IsActive(card))
                 return false;
-
+            
             return element.Name.Equals(filter.EnchantName) && element.Value >= (filter.Value ?? 0);
         }
     }
