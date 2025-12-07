@@ -37,3 +37,6 @@ ElinGamePath/
 
 Anything put inside `package/` folder will be copied to the output folder, which is
 `ElinGamePath/Package/Mod_{ModName}/`.
+
+## License
+MIT
