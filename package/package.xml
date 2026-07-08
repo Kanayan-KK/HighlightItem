@@ -9,17 +9,15 @@
     <description>
         【概要】
         CSVファイルのエンチャント検索条件に合うアイテムの存在をわかりやすく表示します。
-
         【修正内容】
         検索条件に合うアイテムのドロップ時に演出を追加します。
         検索条件に合うアイテムにアイコンを表示します。
         CSVファイル読込時に画面右上にメッセージ表示を追加します。
         F9キー押下時にCSVファイルの読み込み処理を追加します。
-
         【使用方法】
         1. CSVファイルを編集する
         ゲーム内 > ESCキー押下　> ツール > Modビューアー　の順でクリックします。
-        一覧から「Highlight Item」をクリックし「エクスプローラーで開く」をクリックする。
+        一覧から「Highlight Item Enchant」をクリックし「エクスプローラーで開く」をクリックします。
         エクスプローラーに表示された「UserFilter.csv」をメモ帳等のテキストエディタで開きます。
         ゲーム内でほしいスキル名と強化値をカンマ区切りで入力し、上書き保存します。
         CSVファイルは「UTF-8」エンコードで保存してください。
@@ -28,11 +26,54 @@
         2. 動作確認する
         CSVファイルはゲームの起動時に自動でロードされます。
         またゲーム中に「F9」キー押下でCSVファイルを手動でロードすることもできます。
-
         【注意点】
-        ・CSVファイル読込時のメッセージに注意してください。ロードに失敗している場合は画面右上に「Failed load CSV
-        File」と表示されます。
-
+        CSVファイル読込時のメッセージに注意してください。ロードに失敗している場合は画面右上に「Failed load CSV File」と表示されます。
+        [hr][/hr]
+        [Overview]
+        This mod provides a clear visual indication for items that match enchantment search criteria specified in a CSV file.
+        [Features]
+        Adds a special visual effect when an item matching your criteria drops.
+        Displays an icon on items that match your criteria.
+        Adds a notification message in the top-right corner of the screen when the CSV file is loaded.
+        Adds a function to reload the CSV file by pressing the F9 key.
+        [Usage]
+        1. Edit the CSV File
+        In-game, press ESC > Tools > Mod Viewer.
+        Click "Highlight Item Enchant" from the list, then click "Open in Explorer".
+        Open "UserFilter.csv" with a text editor such as Notepad.
+        Enter the name of the desired skill/enchantment and the threshold value, separated by a comma, then save the file.
+        Please ensure the CSV file is saved with UTF-8 encoding.
+        Example: If you want an item with a Faith enchantment value of 50 or higher, enter "Faith,50".
+        The enchantment name in the CSV file must exactly match the enchantment name as it appears in the game.
+        2. Verify Operation
+        The CSV file is automatically loaded when the game starts.
+        You can also manually reload the CSV file during gameplay by pressing the F9 key.
+        [Notes]
+        Please pay attention to the message displayed when loading the CSV file. If the load fails, "Failed load CSV File" will appear in the top-right corner of the screen.
+        [hr][/hr]
+        【概要】
+        清晰显示符合CSV文件中附魔搜索条件的物品。
+        【修改内容】
+        符合搜索条件的物品掉落时会追加特效。
+        符合搜索条件的物品会显示图标。
+        读取CSV文件时会在画面右上角显示消息。
+        按下F9键时会重新读取CSV文件。
+        【使用方法】
+        1. 编辑CSV文件
+        在游戏内按ESC键 > 工具 > Mod查看器。
+        从列表中点击“Highlight Item Enchant”，然后点击“在资源管理器中打开”。
+        用记事本等文本编辑器打开资源管理器中显示的“UserFilter.csv”。
+        输入游戏内想要的技能名和强化值，用逗号分隔后保存。
+        请使用“UTF-8”编码保存CSV文件。
+        例如想要带有强化值“50”以上“信仰”附魔的物品时，请输入“信仰,50”。
+        CSV文件中的附魔名必须与游戏中的附魔名完全一致。
+        2. 确认运行
+        CSV文件会在游戏启动时自动加载。
+        游戏中也可以按“F9”键手动加载CSV文件。
+        【注意事项】
+        请注意CSV文件读取时显示的消息。加载失败时，画面右上角会显示“Failed load CSV File”。
+        [hr][/hr]
+        [url=https://github.com/Kanayan-KK/HighlightItem] SourceCode [/url]
     </description>
     <builtin>false</builtin>
     <visibility>Public</visibility>
